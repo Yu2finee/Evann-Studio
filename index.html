@@ -3,189 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evann's Studio ✎ᝰ</title>
+    <title>Evann's Studio | ✎ᝰ</title>
     <style>
         :root {
-            --royal-blue: #2465ef;
-            --dark-blue: #1a4bbd;
-            --bg-color: #f0f4ff;
-            --text-color: #1e293b;
-            --card-bg: #ffffff;
+            --royal-blue: #002366;
+            --accent-blue: #4169E1;
+            --bg-dark: #050505;
+            --glass: rgba(255, 255, 255, 0.05);
+            --text-main: #ffffff;
+            --text-dim: #b0b0b0;
         }
 
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
-            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* Nav Bar ➜ */
-        nav {
-            background: var(--royal-blue);
+        /* Royal Blue Gradient Background */
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            padding: 20px;
+            height: 100%;
+            background: radial-gradient(circle at 50% -20%, var(--royal-blue) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        /* Navigation */
+        nav {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            padding: 2rem;
+            gap: 20px;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 0px var(--dark-blue);
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(10px);
         }
 
-        nav button {
-            background: white;
-            border: 3px solid var(--text-color);
-            padding: 10px 20px;
-            border-radius: 12px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.1s, box-shadow 0.1s;
-            box-shadow: 4px 4px 0px var(--text-color);
+        nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: 0.3s;
+            border: 1px solid transparent;
         }
 
-        nav button:active {
-            transform: translate(2px, 2px);
-            box-shadow: 1px 1px 0px var(--text-color);
+        nav a:hover, nav a.active {
+            color: white;
+            background: var(--glass);
+            border-color: var(--accent-blue);
         }
 
-        /* Layout Container ✎ */
+        /* Main Container */
         .container {
-            max-width: 800px;
-            width: 90%;
-            margin-top: 50px;
-            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
         }
 
-        .page {
+        .section {
             display: none;
-            animation: popIn 0.3s ease-out forwards;
+            animation: fadeIn 0.5s ease forwards;
         }
 
-        .active {
+        .section.active {
             display: block;
         }
 
-        /* Cartoony Cards ᝰ */
-        .card {
-            background: var(--card-bg);
-            border: 4px solid var(--text-color);
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: 8px 8px 0px var(--royal-blue);
-            margin-bottom: 30px;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Styling */
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
         h1 {
-            font-size: 3rem;
-            color: var(--royal-blue);
-            -webkit-text-stroke: 1px var(--text-color);
-            margin-bottom: 10px;
+            font-size: 3.5rem;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
         }
 
         .badge {
             display: inline-block;
-            background: #ffd166;
-            padding: 5px 15px;
-            border-radius: 50px;
-            border: 2px solid var(--text-color);
-            font-weight: bold;
-            margin: 5px;
+            background: var(--royal-blue);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            border: 1px solid var(--accent-blue);
+        }
+
+        /* Modern Cards */
+        .card {
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--accent-blue);
+            transform: scale(1.01);
         }
 
         .discord-btn {
+            display: inline-flex;
+            align-items: center;
             background: #5865F2;
             color: white;
-            border: 4px solid var(--text-color);
-            padding: 20px 40px;
-            border-radius: 15px;
-            font-size: 1.5rem;
+            padding: 15px 30px;
+            border-radius: 12px;
             text-decoration: none;
-            display: inline-block;
-            box-shadow: 6px 6px 0px #2d337a;
-            transition: 0.2s;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
         }
 
         .discord-btn:hover {
-            transform: scale(1.05);
+            filter: brightness(1.2);
+            box-shadow: 0 0 20px rgba(88, 101, 242, 0.4);
         }
 
-        @keyframes popIn {
-            0% { transform: scale(0.9); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
+        h2 { margin-bottom: 1.5rem; color: var(--accent-blue); }
+        p { color: var(--text-dim); margin-bottom: 1rem; }
+        .highlight { color: white; font-weight: 600; }
 
         footer {
-            margin-top: 50px;
-            padding-bottom: 30px;
-            opacity: 0.6;
+            text-align: center;
+            padding: 4rem;
+            font-size: 0.8rem;
+            color: #444;
         }
     </style>
 </head>
 <body>
 
+    <div class="bg-glow"></div>
+
     <nav>
-        <button onclick="showPage('home')">🏠 Home</button>
-        <button onclick="showPage('about')">👤 About Me</button>
-        <button onclick="showPage('discord')">💬 Discord Server</button>
+        <a href="#" onclick="showSection('home')" id="link-home" class="active">Home</a>
+        <a href="#" onclick="showSection('discord')" id="link-discord">Discord Server</a>
+        <a href="#" onclick="showSection('about')" id="link-about">About Me</a>
     </nav>
 
     <div class="container">
         
-        <div id="home" class="page active">
-            <div class="card">
+        <section id="home" class="section active">
+            <header>
+                <div class="badge">UI / ICON DESIGNER</div>
                 <h1>Evann's Studio ✎ᝰ</h1>
-                <p style="font-size: 1.2rem;">Welcome to my creative corner! I design icons, build interfaces, and blow things up (digitally).</p>
-                <div class="badge">UI Design ➜</div>
-                <div class="badge">Icon Craft ➜</div>
-                <div class="badge">VFX Learner ➜</div>
-            </div>
-            <img src="https://via.placeholder.com/150/2465ef/ffffff?text=✎" alt="Icon" style="border-radius: 50%; border: 4px solid #1e293b;">
-        </div>
+                <p>16-year-old creator pushing the boundaries of digital interfaces.</p>
+            </header>
 
-        <div id="about" class="page">
             <div class="card">
-                <h1>About Me 👤</h1>
-                <p>Hey there! I'm <b>Evann</b>, a 16-year-old designer with a passion for clean aesthetics and cartoony vibes.</p>
-                <hr style="border: 1px dashed var(--royal-blue); margin: 20px 0;">
-                <p>✎ <b>UI/Icon Design:</b> I've been refining my style to create readable, fun, and modern assets.</p>
-                <p>ᝰ <b>VFX:</b> Currently diving deep into the world of visual effects. Learning how to bring static designs to life!</p>
+                <h2>Current Focus ➴</h2>
+                <p>I specialize in clean, high-fidelity <span class="highlight">UI Design</span> and custom <span class="highlight">Iconography</span>. Right now, I am expanding my skill set into the world of <span class="highlight">VFX</span> to add motion to my static work.</p>
             </div>
-        </div>
 
-        <div id="discord" class="page">
             <div class="card">
-                <h1>Join the Studio! 💬</h1>
-                <p>Want to see my latest work or chat about design? My Discord server is the best place to be.</p>
-                <br>
-                <a href="https://discord.gg/PnYT4hDEVD" target="_blank" class="discord-btn">➜ Join Evann Studio</a>
-                <p style="margin-top: 20px; font-size: 0.9rem;">(https://discord.gg/PnYT4hDEVD)</p>
+                <h2>Services ✎</h2>
+                <p>➜ Custom UI Layouts</p>
+                <p>➜ Branding & Iconography</p>
+                <p>➜ Visual Motion Effects (Learning)</p>
             </div>
-        </div>
+        </section>
 
-        <footer>
-            Built with 💙 by Evann's Studio
-        </footer>
-    </div>
-
-    <script>
-        function showPage(pageId) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            
-            // Show selected page
-            document.getElementById(pageId).classList.add('active');
-        }
-    </script>
-</body>
-</html>
+        <section id="discord" class="section">
+            <header>
+                <h1>Join the Hub ➴</h1>
+                <p>This is where I showcase all my work, drop
