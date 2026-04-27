@@ -2,118 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evann's Studio | ✎ᝰ</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Evann's Studio ✎ᝰ</title>
     <style>
-        body { background-color: #313338; color: #dbdee1; font-family: 'Inter', sans-serif; }
-        .discord-sidebar { background-color: #2b2d31; }
-        .discord-nav { background-color: #1e1f22; }
-        .accent-color { color: #00a8fc; }
-        .btn-discord { background-color: #5865f2; transition: background 0.2s; }
-        .btn-discord:hover { background-color: #4752c4; }
+        body {
+            background: #0f0f0f;
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding: 40px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 { color: #fff; font-size: 2.5rem; }
+        .nav { margin-bottom: 50px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .nav a { color: #888; text-decoration: none; margin-right: 20px; transition: 0.3s; }
+        .nav a:hover { color: #fff; }
+        .highlight { color: #00ffaa; font-weight: bold; }
+        .card { 
+            background: #1a1a1a; 
+            padding: 25px; 
+            border-radius: 12px; 
+            border: 1px solid #333;
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background: #5865F2; /* Discord Blue */
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
     </style>
 </head>
-<body class="flex h-screen overflow-hidden">
+<body>
 
-    <div class="discord-nav w-18 flex flex-col items-center py-3 space-y-2 hidden md:flex">
-        <div class="w-12 h-12 bg-[#313338] rounded-2xl flex items-center justify-center text-white font-bold cursor-pointer hover:rounded-xl transition-all">
-            ES
-        </div>
-        <div class="w-8 h-1 bg-[#313338] rounded-full"></div>
-        <div class="w-12 h-12 bg-green-600 rounded-3xl flex items-center justify-center text-white text-xl cursor-pointer hover:rounded-xl transition-all">
-            +
-        </div>
+    <div class="nav">
+        <span>✎ᝰ Evann's Studio</span>
     </div>
 
-    <div class="discord-sidebar w-60 flex flex-col hidden sm:flex">
-        <div class="h-12 shadow-md flex items-center px-4 font-bold text-white border-b border-[#232428]">
-            Evann's Studio ✎ᝰ
-        </div>
-        <div class="flex-1 overflow-y-auto py-4 px-2 space-y-1">
-            <div class="text-xs font-semibold text-gray-500 px-2 mb-1 uppercase">Main Menu</div>
-            <div class="flex items-center px-2 py-1 rounded bg-[#3f4147] text-white cursor-pointer">
-                <span class="text-gray-400 mr-2">#</span> about-me
-            </div>
-            <div class="flex items-center px-2 py-1 rounded hover:bg-[#3f4147] cursor-pointer transition-colors">
-                <span class="text-gray-400 mr-2">#</span> my-work
-            </div>
-            <div class="flex items-center px-2 py-1 rounded hover:bg-[#3f4147] cursor-pointer transition-colors">
-                <span class="text-gray-400 mr-2">#</span> vfx-journey
-            </div>
-            
-            <div class="text-xs font-semibold text-gray-500 px-2 mt-4 mb-1 uppercase">External</div>
-            <a href="https://discord.gg/PnYT4hDEVD" target="_blank" class="flex items-center px-2 py-1 rounded hover:bg-[#3f4147] cursor-pointer transition-colors">
-                <span class="text-gray-400 mr-2">➔</span> discord-server
-            </a>
-        </div>
-        <div class="bg-[#232428] p-2 flex items-center space-x-2">
-            <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-xs text-white">E</div>
-            <div class="flex-1">
-                <div class="text-xs font-bold text-white leading-tight">Evann</div>
-                <div class="text-[10px] text-gray-400">UI/Icon Designer</div>
-            </div>
-        </div>
+    <h1>UI/Icon Designer ➜ <span class="highlight">VFX Learner</span></h1>
+    
+    <p>Hey! I'm a 16-year-old creator building digital experiences. I believe that good design isn't just how it looks, but how it works.</p>
+
+    <div class="card">
+        <h3>Current Status ✎</h3>
+        <ul>
+            <li>Designing high-end UI layouts </li>
+            <li>Crafting custom vector icons</li>
+            <li>Learning the art of VFX 🎬</li>
+        </ul>
     </div>
 
-    <main class="flex-1 flex flex-col">
-        <div class="h-12 shadow-sm flex items-center px-4 border-b border-[#232428] space-x-2">
-            <span class="text-gray-400 text-xl">#</span>
-            <span class="font-bold text-white">about-me</span>
-            <span class="text-gray-400 text-sm hidden md:block">| 16yo Designer & VFX Learner</span>
-        </div>
+    <div class="card">
+        <h3>Official Discord ➜</h3>
+        <p>Want to see my latest work or collaborate? Join the server below.</p>
+        <a href="https://discord.gg/PnYT4hDEVD" class="btn">Join Evann Studio</a>
+    </div>
 
-        <div class="flex-1 overflow-y-auto p-6 space-y-6">
-            
-            <div class="flex space-x-4">
-                <div class="w-10 h-10 bg-blue-500 rounded-full flex-shrink-0 flex items-center justify-center font-bold text-white">E</div>
-                <div>
-                    <div class="flex items-center space-x-2">
-                        <span class="font-bold text-white hover:underline cursor-pointer">Evann</span>
-                        <span class="bg-[#5865f2] text-[10px] px-1 rounded text-white font-bold uppercase">Owner</span>
-                        <span class="text-xs text-gray-400">Today at 12:00 PM</span>
-                    </div>
-                    <div class="mt-1 text-[#dbdee1] leading-relaxed">
-                        <h1 class="text-3xl font-bold text-white mb-2">Welcome to my Studio! ✎ᝰ</h1>
-                        <p class="mb-4">I'm a <span class="text-blue-400 font-semibold">16-year-old UI/Icon Designer</span> currently obsessed with pixels and vectors. Lately, I've been expanding my toolkit by learning <span class="text-purple-400 font-semibold">VFX</span> to add some motion to my designs.</p>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-                            <div class="bg-[#2b2d31] p-4 rounded-lg border-l-4 border-blue-500 shadow-lg">
-                                <h3 class="font-bold text-white flex items-center italic">➔ UI Design</h3>
-                                <p class="text-sm text-gray-400 mt-1">Sleek layouts, modern interfaces, and user-centric flows.</p>
-                            </div>
-                            <div class="bg-[#2b2d31] p-4 rounded-lg border-l-4 border-purple-500 shadow-lg">
-                                <h3 class="font-bold text-white flex items-center italic">➔ VFX Learning</h3>
-                                <p class="text-sm text-gray-400 mt-1">Currently diving into motion graphics and cinematic effects.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="ml-14 max-w-md bg-[#2b2d31] rounded-lg overflow-hidden border border-[#1e1f22] p-4">
-                <p class="text-xs font-bold text-gray-400 uppercase mb-3 italic">You've been invited to join a server</p>
-                <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 bg-[#313338] rounded-xl flex items-center justify-center text-xl shadow-inner">✎</div>
-                    <div class="flex-1">
-                        <h4 class="text-white font-bold">Evann Studio</h4>
-                        <div class="flex items-center space-x-2 text-xs text-gray-400">
-                            <span class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-1"></span> Online</span>
-                            <span class="flex items-center"><span class="w-2 h-2 bg-gray-500 rounded-full mr-1"></span> Members</span>
-                        </div>
-                    </div>
-                    <a href="https://discord.gg/PnYT4hDEVD" class="btn-discord px-4 py-2 rounded text-white text-sm font-medium">Join</a>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="p-4">
-            <div class="bg-[#383a40] rounded-lg p-3 flex items-center text-gray-400">
-                <div class="w-6 h-6 rounded-full border-2 border-gray-400 flex items-center justify-center mr-3 text-xs">+</div>
-                <span>Message #about-me</span>
-            </div>
-        </div>
-    </main>
 </body>
 </html>
