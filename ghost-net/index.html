@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GHOST//NET</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="matrix"></canvas>
+<div id="boot" class="boot">
+  <div class="boot-card">
+    <div class="logo">GHOST<span>//</span>NET</div>
+    <div id="bootLines" class="boot-lines"></div>
+    <button id="enterBtn" class="hidden">ENTER CONSOLE</button>
+  </div>
+</div>
+<div id="app" class="app hidden">
+  <aside class="sidebar">
+    <div class="brand"><b>G//N</b><span>GHOST//NET<br><small>SECURE OPS</small></span></div>
+    <nav>
+      <button class="nav active" data-page="overview">◫ OVERVIEW</button>
+      <button class="nav" data-page="terminal">›_ TERMINAL</button>
+      <button class="nav" data-page="network">◎ NETWORK</button>
+      <button class="nav" data-page="missions">◇ MISSIONS</button>
+      <button class="nav" data-page="archives">▤ ARCHIVES</button>
+      <button class="nav" data-page="logs">≡ LOGS</button>
+    </nav>
+    <div class="side-foot"><i></i> SECURE SESSION<small>SIMULATION MODE</small></div>
+  </aside>
+  <main>
+    <header>
+      <div><small>NODE // 07</small><h1 id="pageTitle">OPERATIONS OVERVIEW</h1></div>
+      <div class="header-right"><span id="clock">00:00:00</span><div class="user"><i></i> EVANN <small>LEVEL 04</small></div></div>
+    </header>
+
+    <section id="overview" class="page active-page">
+      <div class="hero panel">
+        <div><small>CONNECTION ESTABLISHED</small><h2>WELCOME BACK, <em>EVANN.</em></h2><p>GhostNet is running in isolated simulation mode. Every node, mission, trace, file and decryption on this site is fictional.</p><div class="actions"><button class="primary" data-jump="terminal">OPEN TERMINAL</button><button id="lockdownBtn">RUN LOCKDOWN</button></div></div>
+        <div class="radar"><div class="sweep"></div><i class="p1"></i><i class="p2"></i><i class="p3"></i></div>
+      </div>
+      <div class="stats">
+        <article class="panel"><small>ACTIVE NODES</small><b>27</b><span>+3 this cycle</span></article>
+        <article class="panel"><small>ENCRYPTION</small><b>4096</b><span>bit simulated layer</span></article>
+        <article class="panel"><small>MISSIONS</small><b>06</b><span>2 priority</span></article>
+        <article class="panel"><small>THREAT INDEX</small><b class="amber">LOW</b><span>no live systems connected</span></article>
+      </div>
+      <div class="grid2">
+        <div class="panel"><div class="panel-head">LIVE NODE ACTIVITY <span>SIMULATED</span></div><div id="graph" class="graph"></div></div>
+        <div class="panel"><div class="panel-head">RECENT EVENTS <button data-jump="logs">VIEW LOG</button></div><div id="eventFeed" class="feed"></div></div>
+      </div>
+    </section>
+
+    <section id="terminal" class="page">
+      <div class="terminal panel"><div class="terminal-bar">ghostnet@node07:~ <span>● ● ●</span></div><div id="terminalOutput" class="terminal-output"></div><form id="terminalForm"><span>EVANN@GHOSTNET:~$</span><input id="terminalInput" autocomplete="off" placeholder="type 'help'"></form></div>
+      <div class="panel command-list"><div class="panel-head">SAFE SIMULATION COMMANDS</div><div><code>help</code><code>status</code><code>scan</code><code>trace</code><code>decrypt</code><code>missions</code><code>whoami</code><code>clear</code></div></div>
+    </section>
+
+    <section id="network" class="page"><div class="panel"><div class="panel-head">GHOSTNET NODE MAP <button id="pulseNetwork">PULSE NETWORK</button></div><div id="networkMap" class="network-map"><svg id="lines" viewBox="0 0 1000 560" preserveAspectRatio="none"></svg></div></div></section>
+
+    <section id="missions" class="page"><div class="section-title"><div><small>ASSIGNMENTS</small><h2>ACTIVE MISSIONS</h2></div><span>FICTIONAL DATA</span></div><div id="missionGrid" class="mission-grid"></div></section>
+
+    <section id="archives" class="page"><div class="panel"><div class="panel-head">ENCRYPTED ARCHIVES <span>LOCAL DEMO</span></div><div id="fileTable" class="file-table"></div></div></section>
+
+    <section id="logs" class="page"><div class="panel"><div class="panel-head">SESSION LOG <button id="clearLogs">CLEAR</button></div><div id="logList" class="log-list"></div></div></section>
+  </main>
+</div>
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
